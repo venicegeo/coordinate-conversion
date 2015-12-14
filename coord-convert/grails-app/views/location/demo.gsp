@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<asset:stylesheet src = "home.css"/>
+		<asset:stylesheet src = "demo.css"/>
 	</head>
 	<body>
 		<h1>Coordinate Conversion</h1>
@@ -44,6 +44,6 @@
 			</tr>
 		</table>
 	
-		<asset:javascript src = "home.js"/>
+		<asset:javascript src = "demo.js"/>
 	</body>
 </html>

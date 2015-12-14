@@ -8,7 +8,7 @@ This service reads in location text and provides back its equivalent in various 
 
 
 ## Example Usage
-The general usage is `http://localhost:8080/coord-convert/home/convert?location=<location input>` <br>
+The general usage is `http://localhost:8080/coord-convert/location/convert?location=<location input>` <br>
 The result is a JSON as follows:
 ```javascript
 {
@@ -25,8 +25,9 @@ The result is a JSON as follows:
 
 ## Live Demo
 1. Start the grails application by running `grails run-app`.
-2. Go to `http://localhost:8080/coord-convert/home`.
+2. Go to `http://localhost:8080/coord-convert/location`.
 3. The service will automatically evaluate the location input while typing.
+
 
 ## Standalone Service
 1. `grails compile`

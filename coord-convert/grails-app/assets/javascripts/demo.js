@@ -20,6 +20,6 @@ function convert() {
 			$("#mgrs").html(data.mgrs || "");
 			$("#raw").html(JSON.stringify(data));
 		},
-		url: "/coord-convert/home/convert"
+		url: "/coord-convert/location/convert"
 	});
 }

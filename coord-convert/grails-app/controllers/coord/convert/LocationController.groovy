@@ -4,7 +4,7 @@ package coord.convert
 import groovy.json.JsonOutput
 
 
-class HomeController {
+class LocationController {
 
 	def convertService
 
@@ -18,5 +18,5 @@ class HomeController {
 		render json
 	}
 
-	def index() { }
+	def index() { render(view: "demo.gsp") }
 }
