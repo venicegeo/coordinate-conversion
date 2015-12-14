@@ -10,7 +10,7 @@ function convert() {
 	$.ajax({
 		data: "location=" + location,
 		dataType: "json",
-		success: function(data) { console.dir(data);
+		success: function(data) { 
 			$("#format").html(data.format || "");
 			$("#dd").html(data.dd || "");
 			$("#dms").html(data.dms || "");
