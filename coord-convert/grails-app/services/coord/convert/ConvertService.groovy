@@ -58,7 +58,7 @@ class ConvertService {
 			result.put("format", "dms")
 	
 			def dmsLatitude 
-			def ldmsLngitude 
+			def dmsLongitude 
 			location.find(dmsRegExp) {
 				matcher, latDeg, latMin, latSec, latOri, lonDeg, lonMin, lonSec, lonOri ->
 				dmsLatitude = [
