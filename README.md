@@ -3,8 +3,7 @@ This service reads in location text and provides back its equivalent in various 
 
 
 ## Requirements
-* Groovy 2.3.7
-* Grails 2.5.0
+* Vagrant 1.8.1
 
 
 ## Example Usage
@@ -24,12 +23,9 @@ The result is a JSON as follows:
 
 
 ## Live Demo
-1. Start the grails application by running `grails run-app`.
-2. Go to `http://localhost:8080/coord-convert/location`.
-3. The service will automatically evaluate the location input while typing.
-
-
-## Standalone Service
-1. `grails compile`
-2. `grails prod build-standalone`
-3. `java -jar coord-convert/target/standalone.jar context=coord-convert`
+1. `vagrant up`.
+2. `vagrant ssh`.
+3. `cd sync/coord-convert`. 
+4. `grails run-app`.
+5. Go to `http://localhost:8080/coord-convert/location`.
+6. The service will automatically evaluate the location input while typing.
