@@ -10,8 +10,9 @@ class ConvertService {
 	def convertDdToDmsService
 	def convertDdToMgrsService
 	def convertDmsToDdService
+	def convertGeolocationService
 	def convertMgrsToDdService
-
+	
 
 	def serviceMethod(location) {
 		def result = [:]
@@ -85,7 +86,6 @@ class ConvertService {
 			else {
 				def latitude = convertDmsToDdService.serviceMethod(dmsLatitude.degrees, dmsLatitude.minutes, dmsLatitude.seconds, dmsLatitude.orientation)
 				def longitude = convertDmsToDdService.serviceMethod(dmsLongitude.degrees, dmsLongitude.minutes, dmsLongitude.seconds, dmsLongitude.orientation)
-
 				result.put("dd", "${latitude.trunc(6)}, ${longitude.trunc(6)}")
 
 				def dms = "${convertDdToDmsService.serviceMethod(latitude, "latitude")} ${convertDdToDmsService.serviceMethod(longitude, "longitude")}"
@@ -121,8 +121,8 @@ class ConvertService {
 			if (!latLon.error) {
 				def latitude = latLon.latitude
 				def longitude = latLon.longitude
-	
 				result.put("dd", "${latitude.trunc(6)}, ${longitude.trunc(6)}")
+
 				def dms = "${convertDdToDmsService.serviceMethod(latitude, "latitude")} ${convertDdToDmsService.serviceMethod(longitude, "longitude")}"
 				result.put("dms", dms)
 
@@ -134,7 +134,29 @@ class ConvertService {
 			}
 			else { result.put("error", latLon.error) }
 		}
-		else { result.put("error", "The location format could not be determined.") }
+		else {
+			// assume it is a place name and use the geolocation service
+			def locationInfo = location ? convertGeolocationService.serviceMethod(location) : null
+			if (locationInfo) {
+				result.put("format", "geo-location")
+
+				def latitude = locationInfo.latitude
+				def longitude = locationInfo.longitude
+				result.put("dd", "${latitude.trunc(6)}, ${longitude.trunc(6)}")
+
+				def dms = "${convertDdToDmsService.serviceMethod(latitude, "latitude")} ${convertDdToDmsService.serviceMethod(longitude, "longitude")}"
+				result.put("dms", dms)
+
+				result.put("latitude", latitude)
+				result.put("longitude", longitude)
+
+				def mgrs = convertDdToMgrsService.serviceMethod(latitude, longitude)
+				result.put("mgrs", mgrs)				
+
+				result.put("name", locationInfo.name)
+			}
+			else { result.put("error", "The location could not be interpreted.") } 
+		}
 
 
 		return result
