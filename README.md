@@ -17,7 +17,8 @@ The result is a JSON as follows:
 	"dms": <dms equivalent> (string),
 	"latitude": <latitude> (number),
 	"longitude": <longitude> (number),
-	"mgrs": <mgrs equivalent> (string)
+	"mgrs": <mgrs equivalent> (string),
+	"name": <place name of geo-location, if available> (string)
 }
 ```
 
@@ -29,3 +30,8 @@ The result is a JSON as follows:
 4. `grails run-app`.
 5. Go to `http://localhost:8080/coord-convert/location`.
 6. The service will automatically evaluate the location input while typing.
+
+
+## Geo-Location Service
+This application is coded such that an external "Geo-Coder" can be used in the event that place name interpretation is necessary. Modify the `grails-app-services/coord/convert/ConvertGeolcationService.groovy` file as necessary. Note: This feature is commented out by default.
+
