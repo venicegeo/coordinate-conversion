@@ -15,6 +15,7 @@ class LocationController {
 		def json = new JsonOutput().toJson(result)
 
 		
+		response.contentType = "application/json"		
 		render json
 	}
 

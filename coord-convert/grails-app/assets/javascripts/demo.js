@@ -6,20 +6,12 @@ $(document).ready(function() { $("#location").focus(); });
 
 function convert() {
 	var location = $("#location").val();
-	
+	var url = document.origin + "/coord-convert/location/convert?location=" + location;	
+	$("#url").html(url);
+
 	$.ajax({
-		data: "location=" + location,
 		dataType: "json",
-		success: function(data) { 
-			$("#format").html(data.format || "");
-			$("#dd").html(data.dd || "");
-			$("#dms").html(data.dms || "");
-			$("#error").html(data.error || "None");
-			$("#latitude").html(typeof data.latitude == "number" ?  data.latitude : "");
-			$("#longitude").html(typeof data.longitude == "number" ? data.longitude : "");
-			$("#mgrs").html(data.mgrs || "");
-			$("#raw").html(JSON.stringify(data));
-		},
-		url: "/coord-convert/location/convert"
+		success: function(data) { $("#result").html("<pre>" + JSON.stringify(data, null, "\t") + "</pre>"); },
+		url: url
 	});
 }
