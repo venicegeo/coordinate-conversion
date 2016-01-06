@@ -16,7 +16,7 @@ Vagrant.configure(2) do |config|
 
 		# jdk
 		sudo yum -y install java-1.8.0-openjdk-devel
-		echo "export JAVA_HOME=/usr" >> ~/.bashrc
+		echo "export JAVA_HOME=/usr/lib/jvm/java" >> ~/.bashrc
 
 		# unzip
 		sudo yum -y install unzip
