@@ -10,3 +10,6 @@ sdk install groovy 2.3.7
 
 # grails
 sdk install grails 2.5.0
+
+pwd
+echo $PATH
