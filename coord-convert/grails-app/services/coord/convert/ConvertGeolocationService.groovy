@@ -9,7 +9,6 @@ import groovy.json.JsonSlurper
 class ConvertGeolocationService {
 
 	def serviceMethod(searchString) {
-	/*
 		def url = "http://o2.ossim.org/o2/twoFishesProxy/?responseIncludes=WKT_GEOMETRY_SIMPLIFIED&maxInterpretations=1&query=${searchString}"
 		def text = new URL(url).getText()
 		def json = new JsonSlurper().parseText(text)
@@ -26,7 +25,7 @@ class ConvertGeolocationService {
 			return [latitude: latitude, longitude: longitude, name: name]
 		}
 		else { 
-	*/		return null 
-	//	}	
+			return null 
+		}	
 	}
 }
