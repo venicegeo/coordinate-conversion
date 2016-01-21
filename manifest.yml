@@ -1,7 +1,6 @@
 applications:
 - name: pzsvc-coordinate-conversion
   host: pzsvc-coordinate-conversion
-  path: pzsvc-coordinate-conversion.war
+  path: coord-convert
+  command: grails -Dgrails.server.host=127.0.0.1 -Dserver.port=$PORT run-app
   instances: 1
-  env: 
-    JAVA_OPTS: '-Dserver.host=127.0.0.1 -Dserver.port=$PORT'
