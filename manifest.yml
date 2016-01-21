@@ -1,4 +1,5 @@
 applications:
 - name: pzsvc-coordinate-conversion
   host: pzsvc-coordinate-conversion
+  path: pzsvc-coordinate-conversion.jar
   instances: 1
