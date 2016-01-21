@@ -1,5 +1,6 @@
 applications:
 - name: pzsvc-coordinate-conversion
   host: pzsvc-coordinate-conversion
-  path: pzsvc-coordinate-conversion.jar
+  path: pzsvc-coordinate-conversion.war
   instances: 1
+  env: JAVA_OPTS: '-Dserver.host="127.0.0.1" -Dserver.port=$PORT'
