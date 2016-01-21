@@ -3,4 +3,4 @@
 
 cd coord-convert
 grails compile
-grails prod build-standalone pzsvc-coordinate-conversion.jar
+grails -Dbuild.compiler=javac1.7 build-standalone pzsvc-coordinate-conversion.jar
