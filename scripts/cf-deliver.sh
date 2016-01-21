@@ -9,5 +9,7 @@ popd > /dev/null
 # gather some data about the repo
 source $base/vars.sh
 echo $PORT
+ls -al
+pwd
 # do we have this artifact in s3? If not, fail.
 #[ -f $base/../pzsvc-coordinate-conversion.war ] || { aws s3 ls $S3URL && aws s3 cp $S3URL $base/../pzsvc-coordinate-conversion.war || exit 1; }
