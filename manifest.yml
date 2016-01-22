@@ -1,6 +1,5 @@
 applications:
 - name: pzsvc-coordinate-conversion
   host: pzsvc-coordinate-conversion
+  command: java -jar $ARTIFACT host=127.0.0.1 port=$PORT
   instances: 1
-  env: 
-    _JAVA_OPTIONS: '-Dhost=127.0.0.1'
