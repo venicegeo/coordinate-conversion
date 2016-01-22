@@ -3,7 +3,8 @@
 
 APP=pzsvc-coordinate-conversion
 EXT=jar
-SHA=$(git rev-parse HEAD)
+SHA=pzsvc-coordinate-conversion
+#SHA=$(git rev-parse HEAD)
 SHORT=$(git rev-parse --short HEAD)
 ARTIFACT="$SHA.$EXT"
 S3BUCKET="venice-artifacts"
