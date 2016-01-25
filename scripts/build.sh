@@ -11,7 +11,7 @@ source $base/vars.sh
 cd coord-convert
 grails compile
 #grails -Dbuild.compiler=javac1.7 build-standalone $ARTIFACT
-grails -Dbuild.compiler=javac1.7 build-standalone coord-convert.jar
+grails -Dbuild.compiler=javac1.7 build-standalone pzsvc-coord-convert.jar
 #grails war $ARTIFACT
 #aws s3 cp $ARTIFACT s3://$S3BUCKET/$APP/$ARTIFACT
-aws s3 cp coord-convert s3://$S3BUCKET/$APP/coord-convert.jar
+aws s3 cp pzsvc-coord-convert.jar s3://$S3BUCKET/$APP/pzsvc-coord-convert.jar
