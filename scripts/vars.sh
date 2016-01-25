@@ -3,7 +3,7 @@
 
 APP=pzsvc-coordinate-conversion
 EXT=jar
-SHA=pzsvc-coordinate-conversion
+SHA=pzsvc-coord-convert
 #SHA=$(git rev-parse HEAD)
 SHORT=$(git rev-parse --short HEAD)
 ARTIFACT="$SHA.$EXT"
