@@ -6,4 +6,5 @@ applications:
     instances: 1
     timeout: 180
     env:
-      JAVA_OPTS: '-Dhost=${HOSTNAME} -Dport=${CF_INSTANCE_PORT} -Dserver.port=${CF_INSTANCE_PORT} -Dgrails.server.port.http=${CF_INSTANCE_PORT}'
+      JAVA_TOOL_OPTIONS: '-Dhost=${HOSTNAME} -Dport=${CF_INSTANCE_PORT} -Dserver.port=${CF_INSTANCE_PORT} -Dgrails.server.port.http=${CF_INSTANCE_PORT}'
+      SERVER_PORT: '${CF_INSTANCE_PORT}'
