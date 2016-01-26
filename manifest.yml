@@ -6,4 +6,4 @@ applications:
   instances: 1
   timeout: 170
   env:
-    JAVA_OPTS: '-Dport=$PORT -Dhost=$HOSTNAME'
+    JAVA_OPTS: 'port=$PORT host=$HOSTNAME'
