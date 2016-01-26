@@ -1,9 +1,9 @@
 applications:
   - name: pzsvc-coordinate-conversion
     host: pzsvc-coordinate-conversion
-    path: pzsvc-coord-convert.jar host=app.name port=app.port
+    path: pzsvc-coord-convert.jar
     memory: 1G
     instances: 1
     timeout: 180
     env:
-      JAVA_TOOL_OPTIONS: '-Dapp.host=${HOSTNAME} -Dapp.port=${CF_INSTANCE_PORT} -Dserver.port=${CF_INSTANCE_PORT}'
+      JAVA_OPTS: '-Dhost=${HOSTNAME} -Dport=${CF_INSTANCE_PORT} -Dserver.port=${CF_INSTANCE_PORT} -Dgrails.server.port.http=${CF_INSTANCE_PORT}'
