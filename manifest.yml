@@ -2,7 +2,7 @@ applications:
   name: pzsvc-coordinate-conversion
   host: pzsvc-coordinate-conversion
   path: pzsvc-coord-convert.jar
-  arguments: 'host=pzcc.host port=pzcc.port'
+  command: 'java -jar pzsvc-coord-convert.jar host=pzcc.host port=pzcc.port'
   instances: 1
   memory: 1G
   timeout: 170
