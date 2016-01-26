@@ -1,8 +1,7 @@
 applications:
   - name: pzsvc-coordinate-conversion
     host: pzsvc-coordinate-conversion
-    command: java -jar pzsvc-coord-convert.jar host=app.host port=app.port
-    path: pzsvc-coord-convert.jar
+    path: pzsvc-coord-convert.jar host=app.name port=app.port
     memory: 1G
     instances: 1
     timeout: 180
