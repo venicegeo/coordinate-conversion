@@ -6,4 +6,4 @@ applications:
     instances: 1
     timeout: 180
     env:
-      JBP_CONFIG_JAVA_MAIN: '{arguments: "host=\$HOSTNAME port=\$PORT"}'
+      JBP_CONFIG_JAVA_MAIN: '{arguments: "context=coord-convert  host=\$HOSTNAME port=\$PORT"}'
