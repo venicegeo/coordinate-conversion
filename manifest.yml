@@ -1,10 +1,10 @@
 applications:
   - name: pzsvc-coordinate-conversion
     host: pzsvc-coordinate-conversion
-    buildpack: java-buildpack
-    command: 'java -jar pzsvc-coord-convert host=app.host port=app.port'
+    command: 'exec java -jar pzsvc-coord-convert.jar host=app.host port=app.port'
+    path: pzsvc-coord-convert.jar
     memory: 1G
     instances: 1
     timeout: 180
     env:
-      JAVA_TOOL_OPTIONS: '-Dapp.host=${HOSTNAME} -Dapp.port=${CF_INSTANCE_PORT}'
+      JAVA_TOOL_OPTIONS: '-Dapp.host=${HOSTNAME} -Dapp.port=${CF_INSTANCE_PORT} -Dserver.port=${CF_INSTANCE_PORT}'
