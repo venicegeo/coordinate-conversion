@@ -3,8 +3,8 @@ applications:
   host: pzsvc-coordinate-conversion
   path: pzsvc-coord-convert.jar
   arguments: 'host=pzcc.host port=pzcc.port'
+  instances: 1
   memory: 1G
   timeout: 170
-  instances: 1
   env:
     JAVA_OPTS: '-Dpzcc.host=$HOSTNAME -Dpzcc.port=$PORT'
