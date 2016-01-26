@@ -1,7 +1,7 @@
 applications:
   - name: pzsvc-coordinate-conversion
     host: pzsvc-coordinate-conversion
-    buildpack: java_buildpack
+    buildpack: java-buildpack
     command: 'java -jar pzsvc-coord-convert host=app.host port=app.port'
     memory: 1G
     instances: 1
