@@ -1,5 +1,5 @@
 applications:
 - name: pzsvc-coordinate-conversion
   host: pzsvc-coordinate-conversion
-  command: java -jar pzsvc-coord-convert.jar host=127.0.0.1 port=$PORT
+  command: java -jar pzsvc-coord-convert.jar host=127.0.0.1 port=${PORT}
   instances: 1
