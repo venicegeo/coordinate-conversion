@@ -10,6 +10,4 @@ popd > /dev/null
 source $base/vars.sh
 
 # do we have this artifact in s3? If not, fail.
-[ -f $base/../pzsvc-coord-convert.jar ] || { aws s3 ls $S3URL && aws s3 cp $S3URL $base/../pzsvc-coord-convert.jar || exit 1; }
-
-ls -alh
+[ -f $base/../$ARTIFACT ] || { aws s3 ls $S3URL && aws s3 cp $S3URL $base/../$ARTIFACT || exit 1; }
