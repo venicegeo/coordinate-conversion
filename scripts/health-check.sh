@@ -9,4 +9,4 @@ popd > /dev/null
 # gather some data about the repo
 source $base/vars.sh
 
-[ `curl -s -o /dev/null -w "%{http_code}" http://pzsvc-coordinate-conversion.cf.piazzageo.io/coord-convert` = 200 ]
+[ `curl -s -o /dev/null -w "%{http_code}" http://pzsvc-coordinate-conversion.cf.piazzageo.io` = 200 ]
