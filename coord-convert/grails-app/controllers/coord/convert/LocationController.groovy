@@ -7,9 +7,12 @@ import groovy.json.JsonOutput
 class LocationController {
 
 	def convertService
+	def grailsApplication
 
 
 	def convert() {
+		grailsApplication.config.app.count++	
+
 		def location = params.location
 		def result = convertService.serviceMethod(location)
 		def json = new JsonOutput().toJson(result)
@@ -19,5 +22,5 @@ class LocationController {
 		render json
 	}
 
-	def index() { render(view: "demo.gsp") }
+	def index() {}
 }

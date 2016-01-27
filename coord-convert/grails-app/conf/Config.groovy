@@ -116,5 +116,8 @@ log4j.main = {
            'net.sf.ehcache.hibernate'
 }
 
+app {
+	bootTime = new Date()
+	count = 0
+}
 grails.resources.work.dir = ".resources"
-
