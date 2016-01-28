@@ -13,7 +13,7 @@ class LocationController {
 	def convert() {
 		grailsApplication.config.app.count++	
 
-		def location = params.location
+		def location = params.find { true }.key
 		def result = convertService.serviceMethod(location)
 		def json = new JsonOutput().toJson(result)
 

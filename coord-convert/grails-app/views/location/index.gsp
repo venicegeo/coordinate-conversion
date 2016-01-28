@@ -27,7 +27,7 @@
 
 			function convert() {
 				var location = $("#location").val();
-				var url = document.origin + "${request.contextPath}/location/convert?location=" + location;
+				var url = document.origin + "${request.contextPath}/location/convert?" + location;
 				$("#url").html(url);
 
 				$.ajax({
