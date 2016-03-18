@@ -7,6 +7,8 @@ popd > /dev/null
 # gather some data about the repo
 source $root/ci/vars.sh
 
+! type grails >/dev/null 2>&1 && source $root/ci/grails.sh
+
 pushd $root/coord-convert > /dev/null
   grails compile
   grails -Dbuild.compiler=javac1.7 build-standalone $root/$APP.$EXT
