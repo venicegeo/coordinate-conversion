@@ -1,13 +1,16 @@
-#!/bin/bash -ex
+#!/bin/bash -x
 
 pushd `dirname $0`/.. > /dev/null
 root=$(pwd -P)
 popd > /dev/null
 
-if ! type sdk; then 
+
+if ! test -d $SDKMAN_DIR; then
   curl -s get.sdkman.io | bash
   echo "sdkman_auto_answer=true" >> ~/.sdkman/etc/config
-  source ~/.sdkman/bin/sdkman-init.sh
+
+if ! type sdk; then 
+  source $SDKMAN_DIR/bin/sdkman-init.sh
 fi
 
 # groovy
