@@ -18,5 +18,9 @@ fi
 # groovy
 sdk install groovy 2.4.5
 
+sdk use groovy 2.4.5
+
 # grails
 sdk install grails 2.5.4
+
+sdk use grails 2.5.4
