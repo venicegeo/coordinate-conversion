@@ -1,9 +1,0 @@
-applications:
-  - name: pzsvc-coordinate-conversion
-    env:
-      JBP_CONFIG_JAVA_MAIN: '{arguments: "host=\$HOSTNAME port=\$PORT"}'
-    host: pzsvc-coordinate-conversion
-    instances: 1
-    memory: 1G
-    path: pzsvc-coord-convert.jar
-    timeout: 180
