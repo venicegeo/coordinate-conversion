@@ -6,8 +6,7 @@ popd > /dev/null
 
 # gather some data about the repo
 source $root/ci/vars.sh
-uname -a
-lsb_release -a
+
 ! type grails >/dev/null 2>&1 && source $root/ci/grails.sh
 
 pushd $root/coord-convert > /dev/null
