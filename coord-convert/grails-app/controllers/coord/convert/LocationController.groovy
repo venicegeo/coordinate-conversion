@@ -23,4 +23,12 @@ class LocationController {
 	}
 
 	def index() {}
+
+	def ossim() {
+		def sout = new StringBuffer(), serr = new StringBuffer()
+		def proc = '../ossim-info'.execute()
+		proc.consumeProcessOutput(sout, serr)
+		proc.waitForOrKill(1000)
+		render "out> $sout err> $serr"
+	}
 }
