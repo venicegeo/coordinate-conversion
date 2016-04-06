@@ -2,7 +2,6 @@ applications:
 - name: pzsvc-coordinate-conversion
   host: pzsvc-coordinate-conversion
   path: pzsvc-coordinate-conversion.jar
-  buildpack: https://github.com/venicegeo/binary-ossim-buildpack
   domain: stage.geointservices.io
   memory: 1G
   instances: 1
